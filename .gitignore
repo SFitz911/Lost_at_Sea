@@ -1,7 +1,7 @@
 # API Keys and Environment Variables (KEEP PRIVATE)
-.env.js
-.env
-*.env
+# .env.js
+# .env
+# *.env
 
 # IDE files
 .vscode/
