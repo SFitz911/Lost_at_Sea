@@ -1,0 +1,180 @@
+/* Lost at Sea - Emergency Rescue Application Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #ff6b6b;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.1rem;
+}
+
+.progress-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    max-width: 500px;
+    height: 8px;
+    background-color: #2a2a4a;
+    border-radius: 10px;
+    margin: 0 auto 10px auto;
+    overflow: hidden;
+    border: 1px solid #4a4a6a;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff88, #4ecdc4, #00ff88);
+    background-size: 200% 100%;
+    width: 0%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.progress-text {
+    color: #4ecdc4;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.emergency-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.emergency-btn {
+    background: linear-gradient(45deg, #ff0000, #cc0000);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.emergency-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(255, 0, 0, 0.4);
+}
+
+.incident-info {
+    margin-top: 20px;
+    background: rgba(255, 107, 107, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ff6b6b;
+}
+
+.controls-section {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    padding: 10px;
+    border: 2px solid #4a4a6a;
+    border-radius: 5px;
+    background: #2a2a4a;
+    color: white;
+    font-size: 1rem;
+}
+
+#calculate-btn {
+    background: #4ecdc4;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.map-section {
+    margin-bottom: 30px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #4a4a6a;
+}
+
+.results-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.data-panel, .drift-panel {
+    background: rgba(74, 74, 106, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #4a4a6a;
+}
+
+.data-panel h3, .drift-panel h3 {
+    color: #4ecdc4;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.hidden {
+    display: none;
+}
