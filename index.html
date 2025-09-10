@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost at Sea - Rescue Drift Calculator</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚢 Lost at Sea - Rescue Drift Calculator</h1>
+            <div class="status-bar">
+                <span id="location-status">📍 Getting location...</span>
+                <span id="api-status">🌐 Checking APIs...</span>
+            </div>
+            <!-- Progress bar section -->
+            <div id="progress-container" class="progress-container hidden">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <div id="progress-text" class="progress-text">Loading...</div>
+            </div>
+        </header>
+
+        <main>
+            <div class="emergency-section">
+                <button id="man-overboard-btn" class="emergency-btn">
+                    🚨 MAN OVERBOARD 🚨
+                </button>
+                <div id="incident-info" class="incident-info hidden">
+                    <p>Incident Time: <span id="incident-time"></span></p>
+                    <p>Elapsed: <span id="elapsed-time">00:00</span></p>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="input-group">
+                    <label for="manual-lat">Latitude:</label>
+                    <input type="number" id="manual-lat" step="any" placeholder="Auto-detected">
+                </div>
+                <div class="input-group">
+                    <label for="manual-lng">Longitude:</label>
+                    <input type="number" id="manual-lng" step="any" placeholder="Auto-detected">
+                </div>
+                <button id="calculate-btn">Calculate Drift</button>
+            </div>
+
+            <div class="map-section">
+                <div id="map"></div>
+            </div>
+
+            <div class="results-section">
+                <div class="data-panel">
+                    <h3>Environmental Data</h3>
+                    <div id="current-data">Current: Loading...</div>
+                    <div id="wind-data">Wind: Loading...</div>
+                    <div id="weather-data">Weather: Loading...</div>
+                </div>
+                <div class="drift-panel">
+                    <h3>Drift Prediction</h3>
+                    <div id="drift-results">Click "Calculate Drift" to see predictions</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Load dependencies in correct order -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Load environment variables first -->
+    <script src=".env.js"></script>
+    
+    <!-- Load configuration -->
+    <script src="src/js/config.js"></script>
+    
+    <!-- Load utility classes -->
+    <script src="src/js/api.js"></script>
+    <script src="src/js/drift.js"></script>
+    
+    <!-- Load main application last -->
+    <script src="src/js/app.js"></script>
+</body>
+</html>

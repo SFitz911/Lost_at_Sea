@@ -1,0 +1,20 @@
+# API Keys and Environment Variables (KEEP PRIVATE)
+.env.js
+.env
+*.env
+
+# IDE files
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*~
